@@ -12,6 +12,7 @@
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-dept-8001</module>
         <module>microservicecloud-consumer-dept-80</module>
+        <module>microservicecloud-eureka-7001</module>
     </modules>
 
 
@@ -37,8 +38,8 @@
         <mybatisplus.version>2.3</mybatisplus.version>
 
         <!--spring-->
-        <springboot.version>2.0.2.RELEASE</springboot.version>
-        <springcloud.version>Dalston.SR1</springcloud.version>
+        <springboot.version>2.0.3.RELEASE</springboot.version>
+        <springcloud.version>Finchley.RELEASE</springcloud.version>
 
     </properties>
 
@@ -119,5 +120,28 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+
+    <build>
+        <finalName>microservicecloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
