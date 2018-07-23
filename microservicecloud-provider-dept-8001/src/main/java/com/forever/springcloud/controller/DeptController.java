@@ -24,6 +24,7 @@ import java.util.Map;
 @RestController
 public class DeptController {
 
+
     @Autowired
     private DeptService deptService;
 
@@ -34,6 +35,7 @@ public class DeptController {
     public ResponseData<Dept> getDeptById(@PathVariable Integer id) {
         return deptService.getDeptById(id);
     }
+
 
     @GetMapping("/list")
     public ResponseData<Dept> listDept() {
@@ -52,7 +54,7 @@ public class DeptController {
             for (ServiceInstance instance : instances) {
                 Map resultMap = new LinkedHashMap();
                 resultMap.put("host",instance.getHost());
-                /**
+           /*     *
                  * public interface ServiceInstance {
                  *     String getServiceId();
                  *
@@ -69,8 +71,8 @@ public class DeptController {
                  *     default String getScheme() {
                  *         return null;
                  *     }
-                 * }
-                 */
+                 * }*/
+
                 resultMapList.add(resultMap);
             }
         }
@@ -78,5 +80,4 @@ public class DeptController {
         return  new ResponseData().setRows(resultMapList);
 
     }
-
 }

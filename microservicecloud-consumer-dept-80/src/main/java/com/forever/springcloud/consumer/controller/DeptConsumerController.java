@@ -27,4 +27,9 @@ public class DeptConsumerController {
       return restTemplate.getForObject(PROVIDER_PREFIX_PATH+"/"+id,ResponseData.class);
     }
 
+    @GetMapping("/discovery")
+    public ResponseData<Dept> discovery(){
+        return restTemplate.getForObject(PROVIDER_PREFIX_PATH+"/discovery",ResponseData.class);
+    }
+
 }
