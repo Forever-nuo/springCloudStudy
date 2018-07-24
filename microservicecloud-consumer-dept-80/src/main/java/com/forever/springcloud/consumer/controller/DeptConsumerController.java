@@ -17,7 +17,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class DeptConsumerController {
 
-    public static final  String PROVIDER_PREFIX_PATH = "http://localhost:8001/dept";
+ //   public static final  String PROVIDER_PREFIX_PATH = "http://localhost:8001/dept";
+    public static final  String PROVIDER_PREFIX_PATH = "http://MICROSERVICECLOUD-DEPT/dept";
 
     @Autowired
     private RestTemplate restTemplate;
