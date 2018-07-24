@@ -25,6 +25,7 @@ public class DeptConsumerController {
 
     @GetMapping("/{id}")
     public ResponseData<Dept> getDeptById(@PathVariable Integer id){
+
       return restTemplate.getForObject(PROVIDER_PREFIX_PATH+"/"+id,ResponseData.class);
     }
 
