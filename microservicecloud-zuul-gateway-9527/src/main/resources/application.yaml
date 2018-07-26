@@ -19,3 +19,15 @@ info:
   company.name : www.forever.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+
+
+#########################zuul的相关配置
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+  ignored-services: '*'
+  prefix: /forever
+
+  #ignored-services: microservicecloud-dept
